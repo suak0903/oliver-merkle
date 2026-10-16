@@ -37,6 +37,15 @@
     ['pointerup', 'pointercancel'].forEach(function (n) { band.addEventListener(n, function () { zieht = false; band.classList.remove('zieht'); }); });
     addEventListener('resize', function () { halb = spur.scrollWidth / 2; });
   }
+  // Menü markiert den Abschnitt, der gerade im Bild ist
+  var links = {};
+  nav.querySelectorAll('.nav__links a[href^="#"]').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.toggle('aktiv', k === e.target.id); }); } });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(links).forEach(function (k) { var s = document.getElementById(k); if (s) spy.observe(s); });
+  }
   // Stimmen: Pfeile
   var sl = document.getElementById('slider');
   document.querySelectorAll('[data-schritt]').forEach(function (b) { b.addEventListener('click', function () { sl.scrollBy({ left: +b.dataset.schritt * sl.clientWidth * 0.8, behavior: 'smooth' }); }); });

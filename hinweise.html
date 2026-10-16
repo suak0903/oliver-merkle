@@ -5,32 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Über diesen Entwurf | Oliver Merkle Redesign</title>
-<link rel="stylesheet" href="css/om.css?v=1">
+<link rel="icon" href="media/cropped-oliver-merkle-fav-512-192x192.png">
+<link rel="stylesheet" href="css/om2.css?v=3">
+<style>
+.hw-hero{background:linear-gradient(180deg,#fafbfc 0%,var(--hell) 100%);padding:150px 0 70px}
+.hw-hero h1{margin:14px 0 0;font-size:clamp(40px,6vw,84px);line-height:.98;font-weight:800;color:var(--navy);letter-spacing:-.03em}
+.hw-hero h1 em{font-style:normal;color:var(--orange)}
+.hw-hero p{margin:22px 0 0;max-width:680px;font-size:20px;color:#3b4b66}
+.toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.toc a{display:inline-flex;gap:8px;align-items:center;text-decoration:none;font-weight:700;font-size:15px;color:var(--navy);background:#fafbfc;border:1px solid rgba(17,45,105,.18);padding:9px 14px;transition:background .3s,color .3s}
+.toc a b{color:var(--orange)}
+.toc a:hover{background:var(--navy);color:#fafbfc}
+.hw{padding:90px 0;border-top:1px solid rgba(17,45,105,.08)}
+.hw h2{font-size:clamp(30px,3.6vw,46px)}
+.hw p.lead{margin:18px 0 0;max-width:720px;font-size:19px;color:var(--muted)}
+.beachten{margin-top:30px;background:var(--hell);padding:30px 32px;max-width:900px}
+.beachten p{margin:0;font-size:18px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
+.box{background:var(--hell);padding:30px 30px 26px}
+.box h3{margin:0 0 14px;font-size:22px;color:var(--navy)}
+.box ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.box li{display:flex;gap:12px;align-items:flex-start}
+.box li::before{content:"";flex:none;width:9px;height:9px;margin-top:9px;background:var(--orange);transform:rotate(45deg)}
+.box.offen li::before{background:var(--navy);transform:none;border-radius:50%}
+.scale{position:relative;margin:90px 0 0;max-width:980px}
+.scale__bar{height:12px;background:linear-gradient(90deg,var(--grau),var(--navy))}
+.scale__mk{position:absolute;top:-6px;width:4px;height:24px;background:var(--orange)}
+.scale__mk span{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:700;font-size:14px;color:var(--navy)}
+.scale__mk.oben span{bottom:32px;color:var(--orange)}
+.scale__mk.unten span{top:32px}
+.scale__mk.unten2 span{top:56px;color:var(--muted)}
+.scale__mk.unten2{background:var(--navy)}
+.scale__nums{display:flex;justify-content:space-between;margin-top:92px;font-weight:700;color:var(--muted);font-size:14px}
+.scale__stufen{display:flex;gap:18px;margin-top:10px;font-size:14px;color:var(--muted)}
+.scale__stufen div{flex:1 1 0}
+.scale__stufen div:nth-child(2){text-align:center}.scale__stufen div:nth-child(3){text-align:right}
+.cmp{width:100%;border-collapse:collapse;margin-top:34px;font-size:17px}
+.cmp th{text-align:left;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:2px solid var(--navy)}
+.cmp td{padding:14px;border-bottom:1px solid rgba(17,45,105,.12);vertical-align:top}
+.cmp td:first-child{font-weight:700;color:var(--navy)}
+.cmp td:last-child{color:var(--navy);font-weight:600}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.metric{background:var(--hell);padding:22px}
+.metric span{display:block;font-size:14px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.metric .alt{display:block;margin-top:10px;font-size:18px;color:var(--muted);text-decoration:line-through}
+.metric b{display:block;font-size:40px;line-height:1;color:var(--orange);font-weight:800;margin-top:4px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.why div{padding:24px;background:#fafbfc;border:1px solid rgba(17,45,105,.12)}
+.why h3{margin:0 0 8px;font-size:19px;color:var(--navy)}
+.why p{margin:0;font-size:16px;color:var(--muted)}
+.ds{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.sw{width:150px;height:110px;display:flex;flex-direction:column;justify-content:flex-end;padding:12px;font-size:13px;font-weight:700}
+.font{margin-top:30px;padding:26px 28px;background:var(--hell);max-width:760px}
+.font b{display:block;font-size:46px;line-height:1;color:var(--navy)}
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.ref{background:#fafbfc;border:1px solid rgba(17,45,105,.12);overflow:hidden;display:flex;flex-direction:column}
+.ref img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;transition:transform .6s var(--ease)}
+.ref:hover img{transform:scale(1.04)}
+.ref div{padding:18px 20px 22px}
+.ref h4{margin:0 0 6px;font-size:18px;color:var(--navy)}
+.ref p{margin:0 0 10px;font-size:15px;color:var(--muted)}
+.ref a{font-weight:700;color:var(--orange);text-decoration:none}
+.ref__extra{margin-top:10px;font-size:14px}.ref__extra a{display:block;margin-top:4px}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.cards4 div{padding:24px;background:var(--navy);color:#fafbfc}
+.cards4 h3{margin:0 0 8px;font-size:19px;color:var(--orange)}
+.cards4 p{margin:0;font-size:15.5px;color:rgba(250,251,252,.82)}
+.toc-top{position:fixed;right:22px;bottom:78px;z-index:210;width:48px;height:48px;background:var(--orange);color:#fafbfc;border:0;font-size:22px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+.toc-top.zeig{opacity:1;pointer-events:auto}
+@media (max-width:900px){.zwei,.why,.refs,.cards4{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}
+  .cmp,.cmp tbody,.cmp tr,.cmp td{display:block}.cmp thead{display:none}.cmp tr{border:1px solid rgba(17,45,105,.15);margin-bottom:12px;padding:6px 4px}.cmp td{border:0;padding:6px 12px}.cmp td[data-l]::before{content:attr(data-l) ": ";font-weight:700;color:var(--muted)}
+  .scale__stufen{font-size:11px}.scale__mk span{font-size:12px}}
+</style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="index.html" class="nav__logo" aria-label="Zur Startseite"><img src="media/oliver-merkle-logo-800.png" alt="Oliver Merkle" width="800" height="183"></a>
-    <nav class="nav__links" aria-label="Hauptnavigation"><a href="index.html" class="btn">Zum Entwurf</a></nav>
+    <a href="index.html" class="nav__logo" aria-label="Zum Entwurf"><img src="media/oliver-merkle-logo-800.png" alt="Oliver Merkle" width="800" height="183"></a>
+    <nav class="nav__links" aria-label="Hauptnavigation"><a href="index.html">Zum Entwurf</a><a href="https://olivermerkle.com/" target="_blank" rel="noopener" class="btn"><span>Originalseite</span></a></nav>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-<section class="section">
-  <div class="wrap split">
-    <div>
-      <div class="eyebrow">Redesign-Entwurf</div>
-      <h2>Über diesen Entwurf.</h2>
-      <p style="margin-top:18px">Dieser Entwurf ist kein offizieller Auftritt von Oliver Merkle und für Suchmaschinen gesperrt. Er übernimmt die Inhalte der heutigen Startseite, Farben und Schrift unverändert, und wurde im Gespräch in rund einer Stunde gebaut, von einem KI-Team unter der Leitung von Dr.-Ing. Suat Akyol. Auf Wunsch wird er jederzeit entfernt.</p>
-      <ul style="padding-left:20px;margin-top:18px">
-        <li><b>Schnell:</b> eine Seite ohne Baukasten, gebaut für das Handy.</li>
-        <li><b>Ruhig bewegt:</b> Inhalte gleiten beim Scrollen dezent ins Bild.</li>
-        <li><b>Für KI-Suchen lesbar:</b> strukturierte Daten zu Person, Leistungen, Kontakt und Mitgliedschaft.</li>
-        <li><b>Dieselbe Marke:</b> Orange, Navy und die Schrift Assistant wie im Original.</li>
-      </ul>
-      <p style="margin-top:18px">Anmerkungen gern an <a href="mailto:contact@akyol.de" style="color:var(--orange);font-weight:700">contact@akyol.de</a>.</p>
-    </div>
+
+<section class="hw-hero" id="toc">
+  <div class="wrap">
+    <div class="eyebrow">Redesign-Entwurf</div>
+    <h1>Über diesen <em>Entwurf</em>.</h1>
+    <p>Gebaut im Gespräch, in gut einer Stunde, von einem KI-Team unter der Leitung von Dr.-Ing. Suat Akyol. Hier steht, was neu ist, was gemessen wurde und was für den Live-Betrieb noch fehlt.</p>
+    <nav class="toc" aria-label="Inhalt dieser Seite">
+      <a href="#beachten"><b>01</b> Bitte beachten</a><a href="#gebaut"><b>02</b> Was gebaut ist</a><a href="#skala"><b>03</b> Ausbau-Skala</a><a href="#anders"><b>04</b> Was anders ist</a><a href="#analyse"><b>05</b> Gemessen</a><a href="#design"><b>06</b> Farben und Schrift</a><a href="#warum"><b>07</b> Warum gerade ich</a><a href="#referenzen"><b>08</b> Referenzen</a>
+    </nav>
   </div>
 </section>
-<script src="js/om.js?v=1"></script>
+
+<section class="hw" id="beachten"><div class="wrap">
+  <div class="eyebrow">01 Bitte beachten</div>
+  <h2>Ein unverbindlicher Entwurf.</h2>
+  <div class="beachten"><p>Dieser Entwurf ist kein offizieller Auftritt von Oliver Merkle und für Suchmaschinen gesperrt. Er nutzt ausschließlich die öffentlich verfügbaren Inhalte und Bilder von olivermerkle.com, hat keine Verbindung zum offiziellen Auftritt und konkurriert nicht mit dem Original. Auf Wunsch wird er jederzeit entfernt.</p></div>
+</div></section>
+
+<section class="hw" id="gebaut"><div class="wrap">
+  <div class="eyebrow">02 Was gebaut ist</div>
+  <h2>Dieselben Inhalte, neuer Auftritt.</h2>
+  <p class="lead">Die Startseite ist 1:1 übernommen, auf Wunsch als eine Seite, nur auf Deutsch, mit den Stimmen in vollem Namen.</p>
+  <div class="zwei">
+    <div class="box"><h3>Fertig und funktionsfähig</h3><ul>
+      <li>Startseite mit Angebot, vier Leistungen, sechs Kernkompetenzen, Zitat, vier Stimmen, Kontakt</li>
+      <li>Heller Kopf mit den drei Leitsätzen, dezente Bewegung beim Scrollen</li>
+      <li>Branchenband zum Ziehen, Stimmen zum Wischen</li>
+      <li>Handy, Tablet und Rechner, ohne seitliches Verrutschen</li>
+      <li>Strukturierte Daten zu Person, Leistungen, Kontakt und DDIM-Mitgliedschaft</li>
+    </ul></div>
+    <div class="box offen"><h3>Für den Live-Betrieb offen</h3><ul>
+      <li>Services, Projects, Together und About me als Unterseiten oder Abschnitte</li>
+      <li>Englische Fassung</li>
+      <li>Impressum und Datenschutz auf der eigenen Domain</li>
+      <li>Kontaktformular an das Postfach anbinden</li>
+      <li>Auf olivermerkle.com umschalten und für Suchmaschinen freigeben</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="hw" id="skala"><div class="wrap">
+  <div class="eyebrow">03 Ausbau-Skala</div>
+  <h2>Wo dieser Entwurf steht.</h2>
+  <div class="scale">
+    <div class="scale__bar"></div>
+    <div class="scale__mk oben" style="left:50%"><span>Meine Empfehlung</span></div>
+    <div class="scale__mk unten" style="left:20%"><span>Dieser Entwurf</span></div>
+    <div class="scale__mk unten2" style="left:40%"><span>Ihr Bestand, neu gebaut</span></div>
+    <div class="scale__nums"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10</span></div>
+    <div class="scale__stufen"><div>0 bis 1: eine Seite, keine Unterseiten, keine Formulare</div><div>~5 mehrseitiger Auftritt: Formular, SEO und GEO, Mediengalerie, News</div><div>10 All-In: Online-Buchung, CMS, Login, KI-Assistent, Analytics</div></div>
+  </div>
+  <ul class="box" style="margin-top:34px;list-style:none;display:grid;gap:10px;max-width:900px">
+    <li>Der Entwurf ist eine Seite und steht bei etwa 2.</li>
+    <li>Ihr heutiger Auftritt mit fünf Seiten und englischer Fassung läge neu gebaut bei etwa 4.</li>
+    <li>Meine Empfehlung liegt eine Spur höher, bei etwa 5: dazu Kontaktformular und vollständige Auffindbarkeit für Google und KI-Assistenten.</li>
+  </ul>
+</div></section>
+
+<section class="hw" id="anders"><div class="wrap">
+  <div class="eyebrow">04 Was anders ist</div>
+  <h2>Was anders ist.</h2>
+  <table class="cmp">
+    <thead><tr><th>Merkmal</th><th>Bisherige Seite</th><th>Dieser Entwurf</th></tr></thead>
+    <tbody>
+      <tr><td>Technik</td><td data-l="Bisher">WordPress mit Astra-Theme und Plugins</td><td data-l="Entwurf">Schlanke Einzelseite ohne Baukasten</td></tr>
+      <tr><td>Erster Eindruck</td><td data-l="Bisher">Leitsätze und Text</td><td data-l="Entwurf">Große Kernaussage, Foto, Rollen auf einen Blick</td></tr>
+      <tr><td>Handlungsführung</td><td data-l="Bisher">Kontakt am Seitenende</td><td data-l="Entwurf">Gesprächs-Knopf im Kopf, in der Leistung und am Ende</td></tr>
+      <tr><td>Stimmen</td><td data-l="Bisher">Untereinander</td><td data-l="Entwurf">Zum Wischen, mit Initialen-Marke</td></tr>
+      <tr><td>Auffindbar für KI-Suche</td><td data-l="Bisher">Nur WebPage, Kopfzeile, CreativeWork</td><td data-l="Entwurf">Person, Leistungen, Kontakt, DDIM-Mitgliedschaft</td></tr>
+      <tr><td>Ladezeit am Handy</td><td data-l="Bisher">9,9 s bis zum ersten Inhalt</td><td data-l="Entwurf">0,8 s bis zum ersten Inhalt</td></tr>
+    </tbody>
+  </table>
+</div></section>
+
+<section class="hw" id="analyse"><div class="wrap">
+  <div class="eyebrow">05 Gemessen</div>
+  <h2>Gemessen, nicht geschätzt.</h2>
+  <p class="lead">PageSpeed Insights am Handy und der Schema Markup Validator, beide am 16.10.2026 auf beiden Seiten gemessen.</p>
+  <div class="metrics">
+    <div class="metric"><span>Leistung</span><i class="alt">55</i><b>98</b></div>
+    <div class="metric"><span>Erster Inhalt</span><i class="alt">9,9 s</i><b>0,8 s</b></div>
+    <div class="metric"><span>Hauptbild sichtbar</span><i class="alt">13,1 s</i><b>1,2 s</b></div>
+    <div class="metric"><span>Barrierefreiheit</span><i class="alt">84</i><b>90</b></div>
+  </div>
+  <div class="why">
+    <div><h3>Bei Google</h3><p>Die bisherige Seite ist ordentlich aufgestellt: Titel, Beschreibung, Vorschau und Sitemap sind vorhanden. Das bleibt so.</p></div>
+    <div><h3>Bei KI-Assistenten</h3><p>Wer bei ChatGPT oder Perplexity nach einem Interim Manager für Operational Excellence fragt, bekommt Antworten aus strukturierten Daten. Die fehlten bisher fast ganz.</p></div>
+    <div><h3>Am Handy</h3><p>Entscheider lesen unterwegs. Aus 10 Sekunden Warten wird knapp eine.</p></div>
+  </div>
+</div></section>
+
+<section class="hw" id="design"><div class="wrap">
+  <div class="eyebrow">06 Farben und Schrift</div>
+  <h2>Ihre Marke bleibt.</h2>
+  <p class="lead">Farben und Schrift sind aus der bisherigen Seite übernommen, nur in Rollen geordnet: Weiß und helles Grau tragen den Text, Navy gibt Gewicht, Orange zeigt, wo es weitergeht.</p>
+  <div class="ds">
+    <div class="sw" style="background:#ee7325;color:#fafbfc">Orange #EE7325</div>
+    <div class="sw" style="background:#112d69;color:#fafbfc">Navy #112D69</div>
+    <div class="sw" style="background:#081634;color:#fafbfc">Nacht #081634</div>
+    <div class="sw" style="background:#ebf2f4;color:#112d69">Hellgrau #EBF2F4</div>
+    <div class="sw" style="background:#c8d3da;color:#112d69">Grau #C8D3DA</div>
+  </div>
+  <div class="font"><b>Assistant</b><p style="margin:10px 0 0">Eine klare Schrift ohne Füßchen, die schon heute Ihre Seite trägt. Sie wirkt sachlich und bleibt in großen Überschriften kraftvoll.</p></div>
+</div></section>
+
+<section class="hw" id="warum"><div class="wrap">
+  <div class="eyebrow">07 Warum gerade ich</div>
+  <h2>Warum gerade ich.</h2>
+  <div class="cards4">
+    <div><h3>Fester Preis</h3><p>Keine Überraschungen. Fest heißt fest.</p></div>
+    <div><h3>Der Sweet Spot</h3><p>Weder anonyme Großagentur mit langen Wegen noch Gelegenheitsanbieter: ein Ansprechpartner, alles aus einer Hand.</p></div>
+    <div><h3>Wächst mit Ihnen</h3><p>Formular, CMS, News oder KI-Assistent lassen sich ergänzen, von kostenfrei bis zu einer kleinen Monatsgebühr.</p></div>
+    <div><h3>Die Seite gehört Ihnen</h3><p>Volle Nutzungsrechte, kein Abo-Zwang, kein Nachverkauf durch die Hintertür.</p></div>
+  </div>
+</div></section>
+
+<section class="hw" id="referenzen"><div class="wrap">
+  <div class="eyebrow">08 Referenzen</div>
+  <h2>Kein Einzelfall.</h2>
+  <div class="refs">
+    <div class="ref"><img src="media/refs/akyol.webp" alt="Startseite von akyol.de" width="640" height="400" loading="lazy"><div><h4>akyol.de</h4><p>Meine eigene Seite: Interim Management, Blog und Vorträge.</p><a href="https://www.akyol.de" target="_blank" rel="noopener">Live ansehen &nearr;</a><div class="ref__extra"><a href="https://akyol.de/presentations/ki-gestern-heute-morgen/" target="_blank" rel="noopener">&nearr; KI: gestern, heute, morgen</a><a href="https://akyol.de/presentations/ki-arbeitsarchitektur/" target="_blank" rel="noopener">&nearr; KI als Arbeitsarchitektur</a></div></div></div>
+    <div class="ref"><img src="media/refs/coreform.webp" alt="Startseite von core:form" width="640" height="400" loading="lazy"><div><h4>core:form</h4><p>Pilates-Studio, live in Betrieb.</p><a href="https://www.core-form.de" target="_blank" rel="noopener">Live ansehen &nearr;</a></div></div>
+    <div class="ref"><img src="media/refs/cancontrols.webp" alt="Startseite von CanControls" width="640" height="400" loading="lazy"><div><h4>CanControls</h4><p>Hightech-Unternehmen, Entwurf.</p><a href="https://suak0903.github.io/cancontrols/" target="_blank" rel="noopener">Live ansehen &nearr;</a></div></div>
+    <div class="ref"><img src="media/refs/seitec.webp" alt="Startseite von Seitec" width="640" height="400" loading="lazy"><div><h4>Seitec</h4><p>Handwerk, Entwurf.</p><a href="https://suak0903.github.io/seitec/" target="_blank" rel="noopener">Live ansehen &nearr;</a></div></div>
+    <div class="ref"><img src="media/refs/muyres.webp" alt="Startseite der Steuerberatung Muyres" width="640" height="400" loading="lazy"><div><h4>Steuerberatung Muyres</h4><p>Steuerberater, Entwurf.</p><a href="https://suak0903.github.io/steuerberatung-muyres/" target="_blank" rel="noopener">Live ansehen &nearr;</a></div></div>
+    <div class="ref"><img src="media/refs/barista.webp" alt="Startseite des Barista-Biker-Entwurfs" width="640" height="400" loading="lazy"><div><h4>Barista-Biker</h4><p>Coffee-Bike für Events, Entwurf.</p><a href="https://suak0903.github.io/barista-biker/" target="_blank" rel="noopener">Live ansehen &nearr;</a></div></div>
+  </div>
+  <div class="beachten" style="margin-top:40px"><p><b>Was ist das hier?</b> Ein Redesign-Entwurf von Dr.-Ing. Suat Akyol, Inhalte und Bilder aus dem Bestand. Anmerkungen gern an <a href="mailto:contact@akyol.de" style="color:var(--orange);font-weight:700">contact@akyol.de</a>.</p></div>
+</div></section>
+
+<footer class="foot"><div class="wrap"><span>Redesign-Entwurf für Oliver Merkle</span><span><a href="index.html">Zum Entwurf</a><a href="https://olivermerkle.com/" target="_blank" rel="noopener">Originalseite</a></span></div></footer>
+<button class="toc-top" id="tocTop" aria-label="Nach oben zum Inhaltsverzeichnis">&uarr;</button>
+<script src="js/om2.js?v=3"></script>
+<script>
+(function(){var b=document.getElementById('tocTop');addEventListener('scroll',function(){b.classList.toggle('zeig',scrollY>640)},{passive:true});b.addEventListener('click',function(){document.getElementById('toc').scrollIntoView({behavior:'smooth'})});})();
+</script>
 </body>
 </html>
